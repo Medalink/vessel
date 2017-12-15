@@ -1,0 +1,28 @@
+{
+  "name": "medalink/vessel",
+  "description": "Laravel docker wrapper for Prologue Technology",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Chris Fidao",
+      "email": "fideloper@gmail.com"
+    },
+    {
+      "name": "Eric Percifield",
+      "email": "epercifield@prologuetechnology.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Vessel\\": "src/"
+    }
+  },
+  "require": {},
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vessel\\VesselServiceProvider"
+      ]
+    }
+  }
+}
