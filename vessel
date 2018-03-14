@@ -164,6 +164,14 @@ if [ $# -gt 0 ]; then
                 ./vendor/bin/phpunit "$@"
         fi
 
+    # If "node" is used, run node
+    # from our node container
+    elif [ "$1" == "node" ]; then
+        shift 1
+        $COMPOSE run --rm \
+            node \
+            node "$@"
+
     # If "npm" is used, run npm
     # from our node container
     elif [ "$1" == "npm" ]; then
@@ -187,6 +195,22 @@ if [ $# -gt 0 ]; then
         $COMPOSE run --rm \
             node \
             ./node_modules/.bin/gulp "$@"
+
+    # If "bower" is used, run bower
+    # from our node container
+    elif [ "$1" == "bower" ]; then
+        shift 1
+        $COMPOSE run --rm \
+            node \
+            bower "$@"
+
+    # If "grunt" is used, run grunt
+    # from our node container
+    elif [ "$1" == "grunt" ]; then
+        shift 1
+        $COMPOSE run --rm \
+            node \
+            grunt "$@"
 
     # If "dump" is used, run mysqldump
     # from our mysql container
